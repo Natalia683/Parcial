@@ -1,6 +1,6 @@
-import { Component , OnInit, Input } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
 import { ApiService } from 'src/app/Service/api.service';
-
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-farmacia',
@@ -9,10 +9,28 @@ import { ApiService } from 'src/app/Service/api.service';
 })
 
 export class FarmaciaComponent implements OnInit{
-  constructor(public api:ApiService){}
+
+  displayedColumns: string[] ;
+
+  dataSource: MatTableDataSource<any>;
+  
+   data:any []
+
+
+  constructor(public api:ApiService){
+    this.dataSource = new MatTableDataSource();
+
+
+  }
   
     ngOnInit(): void{
-      var response = this.api.getAll("Farmaciums")
-      console.log(response);
+      this.GetFarmacia();
+    }
+
+    public async GetFarmacia(){
+    this.api.Get("Farmaciums").then((res) => {
+      this.dataSource.data =res
+      this.data = res;
+    });
     }
   }

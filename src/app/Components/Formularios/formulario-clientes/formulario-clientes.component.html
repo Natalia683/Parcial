@@ -1,0 +1,56 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Shipping Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Identificacion" formControlName="IdCliente">
+          <mat-error *ngIf="addressForm.controls['IdCliente'].hasError('required')">
+            Identificacion es <strong>requerida</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre" formControlName="NombreCliente">
+            <mat-error *ngIf="addressForm.controls['NombreCliente'].hasError('required')">
+              Nombre es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Apellidos" formControlName="Apel">
+            <mat-error *ngIf="addressForm.controls['ApellidoCliente'].hasError('required')">
+              Apellido es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Telefono" formControlName="TelefonoCliente">
+          <mat-error *ngIf="addressForm.controls['TelefonoCliente'].hasError('required')">
+            Telefono es <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Farmaco" formControlName="FarmacoCliente">
+          <mat-error *ngIf="addressForm.controls['FarmacoCliente'].hasError('required')">
+            First name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

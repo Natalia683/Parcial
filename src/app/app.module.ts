@@ -15,6 +15,21 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
+import { TableComponent } from './Components/table/table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { LoginComponent } from './Components/login/login.component';
+
+import { ReactiveFormsModule } from "@angular/forms";
+import { FormularioFarmaciaComponent } from './Components/Formularios/formulario-farmacia/formulario-farmacia.component';
+import { MatCardModule } from '@angular/material/card';
+import { FormularioClientesComponent } from './Components/Formularios/formulario-clientes/formulario-clientes.component';
+import { FormularioFarmacosComponent } from './Components/Formularios/formulario-farmacos/formulario-farmacos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +38,12 @@ import { HttpClientModule } from '@angular/common/http';
     FarmaciaComponent,
     ClientesComponent,
     FarmacosComponent,
-    MenuComponent
+    MenuComponent,
+    TableComponent,
+    LoginComponent,
+    FormularioFarmaciaComponent,
+    FormularioClientesComponent,
+    FormularioFarmacosComponent
   ],
   imports: [
     HttpClientModule,
@@ -35,7 +55,19 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatRadioModule,
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

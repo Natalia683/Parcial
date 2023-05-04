@@ -1,0 +1,56 @@
+<form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Shipping Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Identificacion" formControlName="IdFarmacia">
+          <mat-error *ngIf="addressForm.controls['IdFarmacia'].hasError('required')">
+            Identificacion es <strong>requerida</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nombre Farmacia" formControlName="NombreFarmacia">
+            <mat-error *ngIf="addressForm.controls['NombreFarmacia'].hasError('required')">
+              Nombre es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Telefono Farmacia" formControlName="TelefonoFarmacia">
+            <mat-error *ngIf="addressForm.controls['TelefonoFarmacia'].hasError('required')">
+              Telefono es <strong>requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>   
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Direccion" formControlName="DireccionFarmacia">
+          <mat-error *ngIf="addressForm.controls['DireccionFarmacia'].hasError('required')">
+            Direccion es <strong>requerida</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Cliente" formControlName="ClientesFarmacia">
+          <mat-error *ngIf="addressForm.controls['ClientesFarmacia'].hasError('required')">
+            Cliente es <strong>requerido</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
